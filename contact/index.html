@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plum AI Inquiry</title>
+    <link rel="stylesheet" href="../assets/contact.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <a class="home-link" href="../">PLUM AI</a>
+        <p class="eyebrow">Inquiry</p>
+        <h1>Send us your contact information.</h1>
+        <p class="lede">Tell us who you are, what you need, and how to reach you. Submissions will be delivered to our inbox.</p>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel">
+          <form action="https://formsubmit.co/aghagolzadeh@gmail.com" method="POST" class="contact-form">
+            <input type="hidden" name="_subject" value="Plum AI inquiry" />
+            <input type="hidden" name="_next" value="https://plum-ai.net/contact/thanks/" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
+
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required />
+            </label>
+
+            <label>
+              <span>Company</span>
+              <input type="text" name="company" />
+            </label>
+
+            <label>
+              <span>What are you looking for?</span>
+              <select name="interest" required>
+                <option value="">Select one</option>
+                <option value="measurement">Measurement / attribution</option>
+                <option value="planning">Budget planning</option>
+                <option value="infrastructure">API / MCP access</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+
+            <button type="submit">Send inquiry</button>
+          </form>
+        </section>
+
+        <aside class="panel side-panel">
+          <p class="side-kicker">What Happens Next</p>
+          <ul>
+            <li>You submit the form.</li>
+            <li>The message is emailed to aghagolzadeh@gmail.com.</li>
+            <li>You can reply directly to the sender from the received email.</li>
+          </ul>
+          <p class="note">The first submission may trigger a one-time email confirmation from FormSubmit if the address has not been activated yet.</p>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

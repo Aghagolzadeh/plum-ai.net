@@ -10,6 +10,8 @@ This folder is ready to publish as a simple GitHub Pages site.
   Secondary services page
 - `assets/`
   Shared CSS and JS
+- `contact/`
+  Contact form routed through FormSubmit
 - `.nojekyll`
   Prevents GitHub Pages from applying Jekyll processing
 - `CNAME.example`
@@ -94,7 +96,11 @@ Then visit:
 - `http://localhost:8080/`
 - `http://localhost:8080/services/`
 
+## Contact form note
+
+The contact form posts to FormSubmit and redirects to `/contact/thanks/`.
+The first submission to a new destination email may trigger a one-time confirmation email from FormSubmit before regular delivery starts.
+
 ## Important note
 
 `gh` is not installed in this environment, so this package is set up for plain `git` commands and normal GitHub web setup.
-

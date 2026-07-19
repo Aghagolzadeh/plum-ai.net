@@ -125,10 +125,42 @@ h1 {
     background 240ms ease;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.ghost-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 15px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 239, 227, 0.08);
+  color: rgba(245, 239, 227, 0.78);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    color 240ms ease;
+}
+
 .enter-link:hover {
   transform: translateY(-2px);
   border-color: rgba(216, 174, 115, 0.5);
   background: rgba(255, 255, 255, 0.08);
+}
+
+.ghost-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(216, 174, 115, 0.28);
+  color: var(--ink);
 }
 
 .signal-field {
@@ -311,4 +343,3 @@ body.page-ready .signal-field {
     height: 54vw;
   }
 }
-
