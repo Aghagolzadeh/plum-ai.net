@@ -1,13 +1,16 @@
 :root {
-  --paper: #f1f0ea;
-  --paper-bright: #f8f8f4;
-  --ink: #121310;
-  --ink-soft: #24251f;
-  --muted: #696a62;
-  --line: #d6d6ce;
-  --line-dark: rgba(18, 19, 16, 0.18);
-  --acid: #d9f52f;
-  --acid-soft: #eff8b5;
+  --paper: #f7f5fa;
+  --paper-bright: #fffefd;
+  --ink: #211829;
+  --ink-soft: #34283d;
+  --muted: #6d6573;
+  --line: #ded9e3;
+  --line-dark: rgba(52, 36, 64, 0.18);
+  --acid: #38d39f;
+  --acid-soft: #e6f8f1;
+  --purple: #713bd2;
+  --purple-soft: #eee8f8;
+  --green: #22bf8b;
   --white: #ffffff;
   --sans: "Manrope", sans-serif;
   --mono: "DM Mono", monospace;
@@ -23,7 +26,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(113, 59, 210, 0.07), transparent 28%),
+    radial-gradient(circle at 92% 18%, rgba(34, 191, 139, 0.07), transparent 24%),
+    linear-gradient(180deg, #faf8fc 0%, var(--paper) 52%, #f8f7f4 100%);
   color: var(--ink);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
@@ -81,6 +87,9 @@ textarea {
 
 .wordmark {
   width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-size: 1.55rem;
   line-height: 1;
   font-weight: 700;
@@ -88,8 +97,28 @@ textarea {
   text-decoration: none;
 }
 
-.wordmark span {
-  color: #8d8e86;
+.brand-symbol {
+  display: block;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.brand-symbol img {
+  display: block;
+  width: 48px;
+  max-width: none;
+  transform: translate(-6px, -1px);
+  mix-blend-mode: multiply;
+}
+
+.brand-name {
+  color: var(--ink);
+}
+
+.brand-name > span {
+  color: var(--purple);
 }
 
 .site-nav {
@@ -177,8 +206,8 @@ textarea {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--acid);
-  box-shadow: 0 0 0 4px rgba(217, 245, 47, 0.25);
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(34, 191, 139, 0.18);
 }
 
 h1,
@@ -206,7 +235,7 @@ h1 em {
   display: block;
   font-style: normal;
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--ink);
+  -webkit-text-stroke: 1.5px var(--purple);
 }
 
 .hero-lede {
@@ -264,7 +293,7 @@ h1 em {
   min-width: 0;
   border: 1px solid var(--ink);
   background: var(--paper-bright);
-  box-shadow: 16px 16px 0 #dad9d0;
+  box-shadow: 16px 16px 0 #ddd5ed;
 }
 
 .window-bar {
@@ -283,10 +312,14 @@ h1 em {
 }
 
 .window-brand span,
-.ai-node h3 span,
+.ai-node h3 span {
+  color: var(--purple);
+  font-weight: 500;
+}
+
 .ads-node h3 span,
 .product-card-head p span {
-  color: #73746d;
+  color: var(--green);
   font-weight: 500;
 }
 
@@ -335,7 +368,7 @@ h1 em {
 }
 
 .window-sidebar .active {
-  background: var(--acid);
+  background: linear-gradient(135deg, var(--purple), var(--green));
   border-color: var(--ink);
   box-shadow: 3px 3px 0 var(--ink);
 }
@@ -382,7 +415,7 @@ h1 em {
   height: 6px;
   margin-right: 5px;
   border-radius: 50%;
-  background: #80aa1e;
+  background: var(--green);
 }
 
 .kpi-grid {
@@ -416,7 +449,7 @@ h1 em {
 }
 
 .kpi-grid .positive {
-  color: #577313;
+  color: #16825e;
 }
 
 .chart-card {
@@ -489,7 +522,7 @@ h1 em {
 }
 
 .chart-baseline {
-  stroke: #a4a49c;
+  stroke: #977cbc;
   stroke-width: 1.5;
   stroke-dasharray: 5 5;
 }
@@ -593,7 +626,9 @@ h1 em {
   overflow: hidden;
   margin-top: 40px;
   padding: 26px 32px;
-  background: var(--ink);
+  background:
+    radial-gradient(circle at 85% 40%, rgba(34, 191, 139, 0.18), transparent 28%),
+    linear-gradient(120deg, #211529, #30203d 68%, #203c35);
   color: var(--white);
 }
 
@@ -647,7 +682,7 @@ h1 em {
 
 .problem-copy h2 span {
   color: transparent;
-  -webkit-text-stroke: 1.3px var(--ink);
+  -webkit-text-stroke: 1.3px var(--purple);
 }
 
 .problem-notes {
@@ -672,7 +707,7 @@ h1 em {
 
 .system-section {
   padding: 120px 0;
-  background: var(--paper-bright);
+  background: linear-gradient(135deg, #fffefd 0%, #f5f0fb 52%, #edf9f5 100%);
   border-top: 1px solid var(--line-dark);
   border-bottom: 1px solid var(--line-dark);
 }
@@ -701,7 +736,22 @@ h1 em {
   min-height: 500px;
   padding: 28px;
   border: 1px solid var(--ink);
-  background: var(--paper);
+  background: rgba(255, 254, 253, 0.86);
+}
+
+.sources-node {
+  background: linear-gradient(150deg, #f7f3fc, var(--purple-soft));
+}
+
+.ai-node {
+  border-color: var(--purple);
+  box-shadow: inset 0 4px 0 var(--purple);
+}
+
+.ads-node {
+  background: linear-gradient(150deg, #f7fcfa, var(--acid-soft));
+  border-color: #229d75;
+  box-shadow: inset 0 4px 0 var(--green);
 }
 
 .system-node h3 {
@@ -790,7 +840,7 @@ h1 em {
 
 .model-orbit::after {
   inset: 62px;
-  background: var(--acid);
+  background: linear-gradient(135deg, var(--purple), #3e8bcb 50%, var(--green));
   border-color: var(--ink);
 }
 
@@ -850,11 +900,11 @@ h1 em {
   position: absolute;
   inset: 0 auto 0 0;
   width: var(--bar);
-  background: var(--ink);
+  background: linear-gradient(90deg, var(--purple), var(--green));
 }
 
 .allocation-bars b {
-  color: #607b19;
+  color: #16825e;
   font-weight: 500;
 }
 
@@ -879,12 +929,14 @@ h1 em {
 }
 
 .product-ai {
-  background: var(--ink);
+  background:
+    radial-gradient(circle at 90% 92%, rgba(56, 211, 159, 0.18), transparent 30%),
+    linear-gradient(145deg, #211529, #332044 72%, #263d39);
   color: var(--white);
 }
 
 .product-ads {
-  background: var(--acid-soft);
+  background: linear-gradient(145deg, #eefaf6, #e7f8f1 58%, #eee8f8);
 }
 
 .product-card-head {
@@ -906,7 +958,7 @@ h1 em {
 
 .product-ai .product-card-head > span,
 .product-ai .product-card-head p span {
-  color: #a2a39c;
+  color: #7be0bd;
 }
 
 .product-card h3 {
@@ -937,7 +989,7 @@ h1 em {
   left: 16%;
   min-height: 180px;
   padding: 24px;
-  background: var(--paper-bright);
+  background: linear-gradient(145deg, #fffefd, #f1ebf9);
   color: var(--ink);
   transform: rotate(-2deg);
   box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.18);
@@ -975,7 +1027,7 @@ h1 em {
   right: 10%;
   left: 10%;
   min-height: 190px;
-  background: var(--paper-bright);
+  background: linear-gradient(145deg, #fffefd, #eefaf6);
   transform: rotate(1.5deg);
 }
 
@@ -990,8 +1042,8 @@ h1 em {
   margin: 28px 0;
 }
 
-.plan-line span:nth-child(1) { background: var(--ink); }
-.plan-line span:nth-child(2) { background: #777970; }
+.plan-line span:nth-child(1) { background: var(--purple); }
+.plan-line span:nth-child(2) { background: #8a76ad; }
 .plan-line span:nth-child(3) { background: var(--acid); }
 .plan-line span:nth-child(4) { background: #d8d8d0; }
 
@@ -1006,7 +1058,9 @@ h1 em {
 
 .evidence-section {
   padding: 120px 0;
-  background: var(--ink);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(56, 211, 159, 0.14), transparent 28%),
+    linear-gradient(145deg, #1f1427, #2e1d3c 70%, #1d342f);
   color: var(--white);
 }
 
@@ -1098,12 +1152,33 @@ h1 em {
 }
 
 .final-cta {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 60px;
   min-height: 520px;
   padding: 76px;
-  background: var(--acid);
+  border: 1px solid rgba(71, 45, 84, 0.22);
+  background:
+    radial-gradient(circle at 90% 5%, rgba(34, 191, 139, 0.26), transparent 32%),
+    linear-gradient(120deg, #eee7f8 0%, #f8f5fb 48%, #e5f7f0 100%);
+}
+
+.final-cta > div {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-brand-mark {
+  position: absolute;
+  z-index: 1;
+  width: min(430px, 42vw);
+  right: -70px;
+  top: -88px;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 .final-cta .signal-label {
@@ -1111,7 +1186,7 @@ h1 em {
 }
 
 .final-cta .signal-label > span {
-  background: var(--ink);
+  background: var(--purple);
   box-shadow: none;
 }
 
@@ -1142,6 +1217,16 @@ h1 em {
 
 .footer-wordmark {
   font-size: 2.1rem;
+}
+
+.footer-wordmark .brand-symbol {
+  width: 42px;
+  height: 42px;
+}
+
+.footer-wordmark .brand-symbol img {
+  width: 56px;
+  transform: translate(-7px, -1px);
 }
 
 .site-footer > p {
@@ -1310,7 +1395,7 @@ h1 em {
   .hero-actions { align-items: stretch; flex-direction: column; }
   .button { justify-content: space-between; }
   .text-link { justify-content: space-between; }
-  .product-window { box-shadow: 8px 8px 0 #dad9d0; }
+  .product-window { box-shadow: 8px 8px 0 #ddd5ed; }
   .window-title-row h2 { font-size: 1.05rem; }
   .live-pill { display: none; }
   .chart-legend { display: none; }
